@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/home.css" />
+	</head>
+
+	<body>
+		<!--导航-->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+						<span class="sr-only">切换导航</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">豆瓣电影</a>
+				</div>
+				<div class="collapse navbar-collapse" id="example-navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a target="index.html">影讯&购票</a>
+						</li>
+						<li>
+							<a target="searchDetail.html">选电影</a>
+						</li>
+						<li>
+							<a target="index.html">排行榜</a>
+						</li>
+						<li>
+							<a target="searchDetail.html">分类</a>
+						</li>
+						<li>
+							<a target="index.html">影评</a>
+						</li>
+						<li>
+							<a target="searchDetail.html">2016年度榜单</a>
+						</li>
+						<li>
+							<a target="index.html">2016观影报告</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!--中间内容-->
+		<div id="container">
+			<!--中间搜索-->
+			<div id="search_background">
+				<div>
+					<input type="" name="" value="" id="search_input" /><button target="search_detail.html" class="glyphicon glyphicon-search" id="search_btn"></button>
+					<input type="hidden" id="idx"/>
+				</div>
+			</div>
+			<!--中间内容-->
+			<div id="iframeContent"></div>
+			<!--<iframe src="index.html" width="100%" height="600px" frameborder="0" scrolling="no"></iframe>-->
+		</div>
+
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$.get('index.html', function(data) {
+					$("#iframeContent").html(data); //初始化加载界面
+				})
+				$('#example-navbar-collapse li').click(function() { //点击li加载界面
+					var current = $(this),
+						target = current.find('a').attr('target'); // 找到链接a中的targer的值
+					$.get(target, function(data) {
+						$("#iframeContent").html(data);
+					});
+				});
+			});
+			//搜索
+			$("#search_btn ").click(function() {
+				var idx = $("#search_input").val()
+				if(idx) {
+					$.get('searchDetail.html', function(data) {
+						$("#iframeContent").html(data); //初始化加载界面
+					});
+				} else {
+					$.get("index.html", function(data) {
+						$("#iframeContent").html('请输入要搜索的信息'); //初始化加载界面
+					});
+				}
+
+			})
+			
+		</script>
+	</body>
+
+</html>

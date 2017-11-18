@@ -1,0 +1,147 @@
+#content {
+	max-width: 1240px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+#content_left {
+	width: 65%;
+}
+
+#content_right {
+	width: 33%;
+}
+#search_name{
+	font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding: 0;
+    color: #494949;
+}
+.people_detail{
+	width: 675px;
+	height: 97px;
+	margin: 15px 0 ;
+	display: flex;
+	justify-content: space-between;
+}
+.people_detail_left{
+	width: 65px;
+	height:86px;
+	
+}
+.people_detail_left img{
+	width: 100%;
+	height: 100%;
+}
+.people_detail_right{
+	width: 590px;
+	height: 97px;
+}
+.first_row{
+	height: 20px;
+	display: flex;
+	flex-flow: row;
+}
+.people_name{
+	padding: 5px;
+	height: 20px;
+	color:#37a ;
+	font-size: 14px;
+}
+.original_title{
+	padding: 5px;
+	display: block;
+	height: 20px;
+	color:#37a ;
+	font-size: 14px;
+}
+.production_time{
+	padding: 5px;
+	display: block;
+	height: 20px;
+	color:#37a ;
+	font-size: 14px;
+}
+.subtype{
+	font-size: 14px;
+	height: 20px;
+	line-height: 20px;
+	color: rgb(0, 173, 63);
+	padding: 5px;
+}
+
+.s_movie_corse{
+	display: flex;
+	flex-flow: row;
+	height: 25px;
+	line-height: 25px;
+	margin: 12px 0 8px 0;
+}
+.movie_average_pic0 {
+	display: block;
+	width: 55px;
+	height: 11px;
+	background: url(../img/ic_rating_s.png) no-repeat;
+	background-position: 0 0;
+	margin: 5px;
+}
+
+.movie_average {
+	display: block;
+	width: 25px;
+	line-height: 25px;
+	color: #e09015;
+}
+#content_right p:first-child{
+	margin-top: 70px;
+	text-align: left;
+    color: #007722;
+    font-size: 16px;
+}
+.tips_div{
+	margin: 10px 0;
+}
+.add_hover{
+	color:  #37a;
+	font-size: 14px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+.add_hover:hover{
+	background: #37a;
+	color: #fff;
+}
+.tipsone{
+	color:  #37a;
+	font-size: 15px;
+	letter-spacing: 1px;
+	margin: 15px 0;
+	cursor: pointer;
+}
+.tipsone span:hover{
+	background: #37a;
+	color: #fff;
+}
+.search_more{
+	margin-top: 30px;
+	text-align: left;
+    color: #007722;
+    font-size: 16px;
+}
+.tipstwo{
+    color: #BBBBBB;
+    font-size: 14px;
+    cursor: pointer;
+}
+.tipstwo span:hover{
+	color: #FFFFFF;
+    font-size: 14px;
+    border-left: 1px solid #FF9999;
+    border-top: 1px solid #FF9999;
+    border-right: 1px solid #FF3333;
+    border-bottom: 1px solid #FF3333;
+    background-color: #773333;
+}
+
