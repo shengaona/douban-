@@ -1,6 +1,6 @@
 
 #content {
-	max-width: 1240px;
+	max-width: 1040px;
 	margin: 0 auto;
 	display: flex;
 	flex-flow: row;
@@ -8,12 +8,13 @@
 }
 
 #content_left {
-	width: 65%;
-	margin-right: 2%;
+	width: 675px;
+	margin-right: 40px;
 }
 
 #content_right {
-	width: 33%;
+	width: 325px;
+	margin-left: 25px;
 }
 
 .city {
@@ -54,7 +55,7 @@
 }
 
 hr {
-	width: 657px;
+	width: 676px;
 	margin: 0;
 	padding: 0;
 }
@@ -349,7 +350,101 @@ hr {
     color: #336699;
 	
 }
-   
+#aside{
+	margin: 55px 0 28px;
+    padding: 12px 0 12px 18px;
+    line-height: 1.5;
+    background: #f2f7f6;
+    border-radius: 4px;
+    width: 300px;
+} 
+#aside a{
+	color: #666699;
+    text-decoration: none;
+    font-size: 14px;
+} 
+#aside a:hover{
+	color: #fff;
+    background:  #37a;
+} 
+#hot_link{
+    background: #f2f7f6;
+    border-radius: 4px;
+    vertical-align: top;
+    width: 300px;
+    padding: 20px 0 20px 8px;
+    margin-top: 28px;
+    border-radius: 4px;
+}
+#hot_link h2{
+    color: #072;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 10px 0 10px 10px;
+    margin: 0;
+}
+#hot_link ul{
+	list-style: none;
+	padding: 0;
+}
+#hot_link ul li{
+	margin:8px 10px;
+	
+}
+#hot_link ul li a{
+	color: #666699;
+    text-decoration: none;
+    font-size: 13px;
+}
+#hot_link ul li a:hover{
+	color: #fff;
+    background:  #37a;
+    text-decoration: none;
+}
+.Advertisement{
+	width: 300px;
+	height: 250px;
+	position: relative;
+	
+}
+.Advertisement img{
+	width: 100%;
+	height: 100%;
+}
+.Advertisement_tips{
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;	
+	background: rgba(0, 0, 0, 0.298039);
+	color: #fff;
+	font-size: 12px;
+	position: absolute;
+	top: 225px;
+	left: 250px;
+}
+#city_select{
+	width: 300px;
+    background-color: #f6f3d3;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    padding: 12px;
+}
+#city_box{
+	width: 74px;
+	height: 25px;
+	color: #c0c0c0;
+	border: 1px solid #eaeaea;
+	outline: none;
+}
+#search_Cinema{
+	width: 196px;
+	border: 1px solid #eaeaea;
+	outline: none;
+	font-weight: 100;
+	font-size: 12px;
+    padding: 3px;
+}
 /*加载动画*/
 .spinner {
 	margin: 100px auto;
@@ -357,7 +452,6 @@ hr {
 	height: 20px;
 	position: relative;
 }
-
 .container1>div,
 .container2>div,
 .container3>div {

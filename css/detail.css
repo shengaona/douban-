@@ -1,17 +1,19 @@
 #content {
-	max-width: 1240px;
+	max-width: 1040px;
 	margin: 40px auto;
 	display: flex;
-	justify-content: space-between;
+	flex-flow: row;
 }
-
 #content_left {
-	width: 65%;
+	width: 675px;
+	margin-right: 40px;
 }
 
 #content_right {
-	width: 33%;
+	width: 325px;
+	margin-left: 25px;
 }
+
 .first_row {
 	display: flex;
 	flex-flow: row;
