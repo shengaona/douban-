@@ -1,156 +1,169 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<link rel="stylesheet" type="text/css" href="css/search_detail.css"/>
-	<title>Document</title>
-</head>
-<body>
-	<div id="content">
-	<div id="content_left">
-		<h1 id="search_name"></h1>
-		<div id="people_detail_outer">
-			
-		</div>
-		
-	</div>
 
-	<div id="content_right">
-		<p>添加豆瓣没有的电影/电视剧……</p>
-		<div class="tips_div">
-			<span class="add_hover"> >添加电影/电视剧&nbsp;&nbsp;<span class="searchKey"></span></span>
-		</div>
-		<div class="tips_div">
-			<span class="add_hover"> >添加影人&nbsp;&nbsp;<span class="searchKey"></span></span>
-		</div>
-		<p class="search_more">相关搜索……</p>
-		<div class="tips_div">
-			<span class="add_hover"> >搜索"<span class="searchKey"></span>"的图书</span>
-		</div>
-		<div class="tips_div">
-			<span class="add_hover"> >搜索"<span class="searchKey"></span>"的音乐</span>
-		</div>
-		<div class="tips_div">
-			<span class="add_hover"> >搜索"<span class="searchKey"></span>"的舞台剧</span>
-		</div>
-		<p class="tipsone"><span> >对搜索不满意？给我们反馈</span></p>
-		<p class="tipstwo"><span>OpenSearch: RSS 2.0</span></p>
-	</div>
-</div>
-<script type="text/template" id="people_detail">
-	<div class="people_detail">
-			<div class="people_detail_left"><img src="${images.small}" /></div>
-			<div class="people_detail_right">
-				<div class="first_row">
-					<p class="people_name">${title}</p>
-					<span class="original_title">${original_title}</span>
-					<span class="production_time">(${year})</span>
-					<span class="subtype">${subtype}</span>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>doubanMovie</title>
+		<link rel="stylesheet" type="text/css" href="css/search_detail.css" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div id="content">
+			<div id="content_left">
+				<h1 id="search_name"></h1>
+				<div id="people_detail_outer">
+
 				</div>
-				<div class="s_movie_corse">
-					<span class="movie_average_pic0"></span>
-					<span class="movie_average">${rating.average}</span>
-					<span class="average">(${collect_count}人评分)</span>
-					
-				</div>
-				<p class="people_fans">${genres}</p><span class="movie_act"></span>
-				<p class="people_production"></p>
+
 			</div>
-	</div>
-</script>
-<script src="js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
 
-<script type="text/javascript">
-	//获取搜索框的值
-	var idx = $("#search_input").val()
-	
-	//数据请求
-	go("http://api.douban.com/v2/movie/search?q=" +idx, {}, function(d) {
-			var r=d.subjects
-			
-			//请求成功清除搜索框的值
-			$("#search_input").val("")
-			$("#people_detail").tmpl(r).appendTo("#people_detail_outer")
-			$("#search_name").html(d.title)
-			$(".searchKey").html(idx)
-			for(var i=0;i<r.length;i++){
-				var x = r[i].rating.average
-				//星际评分
-				if (x==0) {
+			<div id="content_right">
+				<p>添加豆瓣没有的电影/电视剧……</p>
+				<div class="tips_div">
+					<span class="add_hover"> >添加电影/电视剧&nbsp;&nbsp;<span class="searchKey"></span></span>
+				</div>
+				<div class="tips_div">
+					<span class="add_hover"> >添加影人&nbsp;&nbsp;<span class="searchKey"></span></span>
+				</div>
+				<p class="search_more">相关搜索……</p>
+				<div class="tips_div">
+					<span class="add_hover"> >搜索"<span class="searchKey"></span>"的图书</span>
+				</div>
+				<div class="tips_div">
+					<span class="add_hover"> >搜索"<span class="searchKey"></span>"的音乐</span>
+				</div>
+				<div class="tips_div">
+					<span class="add_hover"> >搜索"<span class="searchKey"></span>"的舞台剧</span>
+				</div>
+				<p class="tipsone"><span> >对搜索不满意？给我们反馈</span></p>
+				<p class="tipstwo"><span>OpenSearch: RSS 2.0</span></p>
+			</div>
+		</div>
+		<script type="text/template" id="people_detail">
+			<div class="people_detail">
+				<div class="people_detail_left"><img src="${images.small}" /></div>
+				<div class="people_detail_right">
+					<div class="first_row">
+						<p class="people_name">${title}</p>
+						<span class="original_title">${original_title}</span>
+						<span class="production_time">(${year})</span>
+						<span class="subtype">${subtype}</span>
+					</div>
+					<div class="s_movie_corse">
+						<span class="movie_average_pic0"></span>
+						<span class="movie_average">${rating.average}</span>
+						<span class="average">(${collect_count}人评分)</span>
+
+					</div>
+					<p class="people_fans">${genres}</p><span class="movie_act"></span>
+					<p class="people_production"></p>
+				</div>
+			</div>
+		</script>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+
+		<script type="text/javascript">
+			//获取搜索框的值
+			var idx = $("#search_input").val()
+
+			//数据请求
+			go("http://api.douban.com/v2/movie/search?q=" + idx, {}, function(d) {
+				var r = d.subjects
+
+				//请求成功清除搜索框的值
+				$("#search_input").val("")
+				$("#people_detail").tmpl(r).appendTo("#people_detail_outer")
+				$("#search_name").html(d.title)
+				$(".searchKey").html(idx)
+				for(var i = 0; i < r.length; i++) {
+					var x = r[i].rating.average
+					//星际评分
+					if(x == 0) {
 						$(".movie_average").eq(i).html("暂无评分")
 						$(".movie_average_pic0").eq(i).css({
-							"display":"none"
-							})
+							"display": "none"
+						})
 						$(".movie_average").eq(i).css({
-							"color":"#111",
-							"font-size":"12px",
-							"display":"block",
-							"width":"65px",
-							"padding":"0 5px"
-							})
-					}
-				else if(x>9&&x<=10) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 0"})
-					}
-				else if(x>8&&x<=9) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 -11px"})
-					}
-				else if(x>7&&x<=8) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 -22px"})
-					}
-				else if(x>6&&x<=7) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 -33px"})
-					}
-				else if(x>5&&x<=6) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 -44px"})
-					}
-				else if(x>4&&x<=5) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 -55px"})
-					}
-				else if(x>3&&x<=4) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 -66px"})
-					}
-				else if(x>2&&x<=3) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 -77px"})
-					}
-				else if(x>1&&x<=2) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 -88px"})
-					}
-				else if(x>0&&x<=1) {
-						$(".movie_average_pic0").eq(i).css({"background-position":"0 -99x"})
+							"color": "#111",
+							"font-size": "12px",
+							"display": "block",
+							"width": "65px",
+							"padding": "0 5px"
+						})
+					} else if(x > 9 && x <= 10) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 0"
+						})
+					} else if(x > 8 && x <= 9) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 -11px"
+						})
+					} else if(x > 7 && x <= 8) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 -22px"
+						})
+					} else if(x > 6 && x <= 7) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 -33px"
+						})
+					} else if(x > 5 && x <= 6) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 -44px"
+						})
+					} else if(x > 4 && x <= 5) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 -55px"
+						})
+					} else if(x > 3 && x <= 4) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 -66px"
+						})
+					} else if(x > 2 && x <= 3) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 -77px"
+						})
+					} else if(x > 1 && x <= 2) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 -88px"
+						})
+					} else if(x > 0 && x <= 1) {
+						$(".movie_average_pic0").eq(i).css({
+							"background-position": "0 -99x"
+						})
 					}
 					//星级评分结束
-					
-			}
-			//类型
-			for (var i=0;i<r.length;i++) {
-				var x = r[i].subtype
-				if (x=="tv") {
-					$(".subtype").eq(i).html("[剧情]")
-				} else{
-					$(".subtype").eq(i).html("[电影]")
+
 				}
-			}
-			//演员
-			for (var i=0;i<r.length;i++) {
-				var x = r[i].casts
-				if(x[i]=''){
-					$(".movie_act").eq(i).html("ff")
+				//类型
+				for(var i = 0; i < r.length; i++) {
+					var x = r[i].subtype
+					if(x == "tv") {
+						$(".subtype").eq(i).html("[剧情]")
+					} else {
+						$(".subtype").eq(i).html("[电影]")
+					}
 				}
-				var y=x[i]
-				var act=[]
-				
-				act[i]=y[i].name
-				console.log(y.name)
-			}
-			
-	})
-	
-</script>
-</body>
+				//演员
+				for(var i = 0; i < r.length; i++) {
+					var x = r[i].casts
+					if(x[i] = '') {
+						$(".movie_act").eq(i).html("ff")
+					}
+					var y = x[i]
+					var act = []
+
+					act[i] = y[i].name
+					console.log(y.name)
+				}
+
+			})
+		</script>
+	</body>
+
 </html>
