@@ -50,3 +50,47 @@ nav {
 	border: none;
 	outline: none;
 }
+@media only screen and (max-width: 1040px) {
+	nav {
+	margin-bottom: 0 !important;
+	position: fixed;
+}
+	#search_background div {
+	width: 50%;
+	height: 35px;
+	display: block;
+	position: relative;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px #777777;
+	z-index: 999;
+	margin: 30px auto;
+}
+
+#search_background input {
+	float: left;
+	width: 85%;
+	height: 100%;
+	outline: none;
+	border: none;
+	box-shadow: none;
+	border-radius: 5px;
+}
+
+#search_background button {
+	float: right;
+	width: 15%;
+	height: 34.5px;
+	position: absolute;
+	top: 0;
+	right: 0px;
+	text-align: center;
+	line-height: 33px;
+	font-size: 18px;
+	background: #737373;
+	color: #fff;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: none;
+	outline: none;
+}
+}

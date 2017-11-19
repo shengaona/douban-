@@ -5,8 +5,11 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>doubanMovie</title>
+		<title>豆瓣</title>
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+		<script type="text/javascript" src="js/iconfont.js"></script>
+		<link rel="stylesheet" type="text/css" media="screen and (max-width:1040px)" href="css/index1.css">
 	</head>
 
 	<body>
@@ -15,7 +18,7 @@
 			<div id="content_left">
 				<h1 class="city">电影票—<span id="city_name">杭州</span></h1>
 				<button id="change_btn"><span>[切换城市]</span></button>
-				<a href="https://www.douban.com/note/639020553/"><img src="img/bf208056049e5c5.jpg" /></a>
+				<a href="https://www.douban.com/note/639020553/" class="tips_img"><img src="img/bf208056049e5c5.jpg" /></a>
 				<div class="show_title">
 					<h3>正在上映</h3>
 					<hr />
@@ -87,8 +90,15 @@
 				<div class="about_me">
 					<h2>关注我</h2>
 					<hr />
-					<i class="iconfont">&#x33;</i>
-					<span class=""></span>
+					<svg class="icon" aria-hidden="true" id="wechat">
+					  <use xlink:href="#icon-weixin"></use>
+					</svg>
+					<svg class="icon" aria-hidden="true" id="qq">
+					  <use xlink:href="#icon-qq"></use>
+					</svg>
+					<svg class="icon" aria-hidden="true" id="github">
+					  <use xlink:href="#icon-github"></use>
+					</svg>
 				</div>
 
 
@@ -107,7 +117,7 @@
 		</script>
 		<script type="text/template" id="rank_List">
 			<li class="rank_list_menu">
-				<a href=""><span class="list_title">${rank}&nbsp;&nbsp;</span><span class="list_title">${subject.title}</span></a>
+				<span class="list_title">${rank}&nbsp;&nbsp;</span><a href=""><span class="list_title">${subject.title}</span></a>
 			</li>
 		</script>
 		<script src="js/jquery-1.9.1.min.js"></script>
