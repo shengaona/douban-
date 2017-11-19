@@ -64,17 +64,33 @@
 				</div>
 				<div class="Advertisement">
 					<div class="Advertisement_tips">广告</div>
-					<img src="https://oimageb4.ydstatic.com/image?id=6802627207479943275&product=adpublish&w=300&h=250"/></div>
+					<img src="https://oimageb4.ydstatic.com/image?id=6802627207479943275&product=adpublish&w=300&h=250"/
+				</div>
 				<div id="hot_link">
 					<h2>电影活动</h2>
 					<ul>
-						<li><a href="">《东方快车》遇到上译厂有什么化学反应？</a></li>
-						<li><a href="">一周大新闻丨《魔戒》将拍成美剧</a></li>
-						<li><a href="">魔镜魔镜告诉我，谁是世界上票房最高的人？</a></li>
+						<li><a href="#">《东方快车》遇到上译厂有什么化学反应？</a></li>
+						<li><a href="#">一周大新闻丨《魔戒》将拍成美剧</a></li>
+						<li><a href="#">魔镜魔镜告诉我，谁是世界上票房最高的人？</a></li>
+					</ul>
+				</div>					
+				<div id="rank">
+					<h2>本周北美票房榜 &nbsp;&nbsp;<span>更多榜单>></span></h2>
+					<ul id="rank_List_outer">
+						
 					</ul>
 				</div>
-					
-				<!--右边电影票房榜-->
+				<div class="Advertisement">
+					<div class="Advertisement_tips">广告</div>
+					<img src="https://oimagec1.ydstatic.com/image?id=-8851283151005825076&product=adpublish&w=300&h=250"/>
+				</div>
+				<div class="about_me">
+					<h2>关注我</h2>
+					<hr />
+					<i class="iconfont">&#x33;</i>
+					<span class=""></span>
+				</div>
+
 
 			</div>
 		</div>
@@ -89,18 +105,26 @@
 				<div class="buy_ticket"><button>立即购票</button></div>
 			</div>
 		</script>
+		<script type="text/template" id="rank_List">
+			<li class="rank_list_menu">
+				<a href=""><span class="list_title">${rank}&nbsp;&nbsp;</span><span class="list_title">${subject.title}</span></a>
+			</li>
+		</script>
 		<script src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
 		<script type="text/javascript" src="js/global.js"></script>
 		<script type="text/javascript">
+			$(document).ready(function(){							
 			//正在上映
 			go("http://api.douban.com/v2/movie/in_theaters", {}, function(d) {
 				var list = d.subjects
 				var count = d.total
 				$("#movie_now").tmpl(list).appendTo("#movie_now_outer")
 				$("#movie_now_outer div a").attr("class", "movie_detail_a")
+				$("#movie_soon_more div a").attr("class", "movie_detail_a")
 				$("#movie_now_outer div input").attr("class", "idInput")
+				$("#movie_soon_more div input").attr("class", "idInput")
 				$(".spinner").hide()
 
 				var inlength = $(".idInput").length
@@ -247,11 +271,33 @@
 							}
 
 						}
+							//点击获取当前idx
+				$(".movie_detail_a").click(function() {
+					var index = $('.movie_detail_a').index(this);
+					var idx = $(".idInput").eq(index).val()
+					console.log(idx)
+					$("#idx").val(idx)
+					$.get('detail.html', function(data) {
+						$("#iframeContent").html(data); //初始化加载界面
+					});
 
-					})
 				})
 
+					})
+				
+					
+				})
+				
+
 			})
+			//口碑榜
+			go("http://api.douban.com/v2/movie/us_box", {}, function(d) {
+					var list = d.subjects
+					$("#rank_List").tmpl(list).appendTo("#rank_List_outer")
+					console.log(d.subjects)
+					
+				})
+			});
 		</script>
 
 	</body>

@@ -1,4 +1,3 @@
-
 #content {
 	max-width: 1040px;
 	margin: 0 auto;
@@ -13,7 +12,7 @@
 }
 
 #content_right {
-	width: 325px;
+	width: 300px;
 	margin-left: 25px;
 }
 
@@ -372,7 +371,7 @@ hr {
     border-radius: 4px;
     vertical-align: top;
     width: 300px;
-    padding: 20px 0 20px 8px;
+    padding: 10px 0 10px 8px;
     margin-top: 28px;
     border-radius: 4px;
 }
@@ -444,6 +443,67 @@ hr {
 	font-weight: 100;
 	font-size: 12px;
     padding: 3px;
+}
+#rank{
+	width: 300px;
+	margin: 25px 0;
+}
+#rank h2{
+	font-size: 16px;
+	color: #111;
+	font-weight: 100;
+}
+#rank h2 span{
+	font-size:13px;
+	color: #666699;
+}
+#rank_List_outer {
+	padding-left: 0;
+	list-style: none;
+}
+#rank_List_outer li{
+	padding: 7px 0 7px 5px;
+    color: #37a;
+    border-bottom: 1px solid #eaeaea;
+}
+#rank_List_outer li a{
+	text-decoration: none;
+}
+#rank_List_outer li a:hover{
+	color: #fff;
+	background: #666699;
+}
+.rank_list_menu:first-child{
+	padding: 7px 0 7px 5px;
+    color: #37a;
+    border-top: 1px solid #eaeaea;
+}
+.about_me{
+	width: 300px;
+	
+}
+.about_me h2{
+	font-size: 16px;
+	color: #111;
+	font-weight: 100;
+}
+.about_me hr{
+	color:#eaeaea;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont.woff') format('woff'),
+  url('iconfont.ttf') format('truetype'),
+  url('iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
 }
 /*加载动画*/
 .spinner {
